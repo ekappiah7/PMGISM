@@ -289,6 +289,7 @@ blockquote { font-size: 1.05rem; color: rgba(255,255,255,0.9); line-height: 1.8;
 .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1.5fr; gap: 40px; }
 .footer-logo { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
 .footer-cross { font-size: 2rem; color: var(--gold); }
+.footer-logo-img { width: 40px; height: 40px; object-fit: contain; border-radius: 50%; background: rgba(201,168,76,0.15); }
 .footer-logo strong { display: block; font-family: var(--font-display); font-size: 1.2rem; color: var(--white); }
 .footer-logo span { font-size: 0.72rem; color: rgba(255,255,255,0.6); letter-spacing: 1px; text-transform: uppercase; }
 .footer-brand p { font-size: 0.88rem; line-height: 1.7; color: rgba(255,255,255,0.65); margin-bottom: 12px; }

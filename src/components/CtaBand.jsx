@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 export default function CtaBand() {
   return (
     <section className="cta-band">
@@ -8,9 +10,9 @@ export default function CtaBand() {
           God has deposited greatness inside you. PMGI exists to help you
           discover, develop, and deploy it.
         </p>
-        <a href="#register" className="btn btn-primary btn-lg">
+        <Link to="/contact" className="btn btn-primary btn-lg">
           Start Your Application Today
-        </a>
+        </Link>
       </div>
     </section>
   )

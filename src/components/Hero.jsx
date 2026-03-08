@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react'
+import { Link } from 'react-router-dom'
 
 const PARTICLES = Array.from({ length: 60 }, (_, i) => ({
   id: i,
@@ -58,8 +59,8 @@ export default function Hero() {
         </p>
 
         <div className="hero-actions animate-fade-up" style={{ animationDelay: '0.9s' }}>
-          <a href="#register" className="btn btn-primary">Begin Your Journey</a>
-          <a href="#programs" className="btn btn-secondary">Explore Programs</a>
+          <Link to="/contact" className="btn btn-primary">Begin Your Journey</Link>
+          <Link to="/programs" className="btn btn-secondary">Explore Programs</Link>
         </div>
 
         <div className="hero-stats animate-fade-up" style={{ animationDelay: '1.1s' }}>

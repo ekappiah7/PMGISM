@@ -1,4 +1,14 @@
+import { Link } from 'react-router-dom'
+
 const year = new Date().getFullYear()
+
+const quickLinks = [
+  { to: '/',           label: 'Home' },
+  { to: '/about',      label: 'About' },
+  { to: '/programs',   label: 'Programs' },
+  { to: '/leadership', label: 'Leadership' },
+  { to: '/contact',    label: 'Register' },
+]
 
 export default function Footer() {
   return (
@@ -8,7 +18,7 @@ export default function Footer() {
 
           <div className="footer-brand">
             <div className="footer-logo">
-              <span className="footer-cross">✝</span>
+              <img src="/image.png" alt="PMGI Logo" className="footer-logo-img" />
               <div>
                 <strong>PMGI</strong>
                 <span>School of Ministry</span>
@@ -21,8 +31,8 @@ export default function Footer() {
           <div className="footer-links">
             <h4>Quick Links</h4>
             <ul>
-              {['#home', '#about', '#programs', '#leadership', '#register'].map(href => (
-                <li key={href}><a href={href}>{href.slice(1).replace(/^\w/, c => c.toUpperCase())}</a></li>
+              {quickLinks.map(({ to, label }) => (
+                <li key={to}><Link to={to}>{label}</Link></li>
               ))}
             </ul>
           </div>
@@ -30,10 +40,10 @@ export default function Footer() {
           <div className="footer-links">
             <h4>Programs</h4>
             <ul>
-              <li><a href="#register">Undergraduate</a></li>
-              <li><a href="#register">Graduate</a></li>
-              <li><a href="#register">Post-Graduate</a></li>
-              <li><a href="#programs">All Courses</a></li>
+              <li><Link to="/contact">Undergraduate</Link></li>
+              <li><Link to="/contact">Graduate</Link></li>
+              <li><Link to="/contact">Post-Graduate</Link></li>
+              <li><Link to="/programs">All Courses</Link></li>
             </ul>
           </div>
 

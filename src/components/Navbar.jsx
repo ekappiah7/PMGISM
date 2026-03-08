@@ -1,11 +1,12 @@
 import { useState, useEffect } from 'react'
+import { NavLink, Link } from 'react-router-dom'
 
 const links = [
-  { href: '#home',       label: 'Home' },
-  { href: '#about',      label: 'About' },
-  { href: '#programs',   label: 'Programs' },
-  { href: '#leadership', label: 'Leadership' },
-  { href: '#contact',    label: 'Contact' },
+  { to: '/',           label: 'Home' },
+  { to: '/about',      label: 'About' },
+  { to: '/programs',   label: 'Programs' },
+  { to: '/leadership', label: 'Leadership' },
+  { to: '/contact',    label: 'Contact' },
 ]
 
 export default function Navbar() {
@@ -28,23 +29,30 @@ export default function Navbar() {
     <nav className={`navbar${scrolled ? ' scrolled' : ''}`}>
       <div className="nav-container">
         {/* Logo */}
-        <a href="#home" className="nav-logo" onClick={close}>
+        <Link to="/" className="nav-logo" onClick={close}>
           <div className="logo-emblem"><img src="/image.png" alt="PMGI Logo" className="logo-img" /></div>
           <div className="logo-text">
             <span className="logo-abbr">PMGI</span>
             <span className="logo-sub">School of Ministry</span>
           </div>
-        </a>
+        </Link>
 
         {/* Desktop links */}
         <ul className={`nav-links${open ? ' open' : ''}`}>
-          {links.map(({ href, label }) => (
-            <li key={href}>
-              <a href={href} className="nav-link" onClick={close}>{label}</a>
+          {links.map(({ to, label }) => (
+            <li key={to}>
+              <NavLink
+                to={to}
+                end={to === '/'}
+                className={({ isActive }) => `nav-link${isActive ? ' active' : ''}`}
+                onClick={close}
+              >
+                {label}
+              </NavLink>
             </li>
           ))}
           <li>
-            <a href="#register" className="nav-link nav-cta" onClick={close}>Register Now</a>
+            <Link to="/contact" className="nav-link nav-cta" onClick={close}>Register Now</Link>
           </li>
         </ul>
 
