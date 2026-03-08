@@ -29,7 +29,7 @@ export default function Navbar() {
       <div className="nav-container">
         {/* Logo */}
         <a href="#home" className="nav-logo" onClick={close}>
-          <div className="logo-emblem"><span className="logo-cross">✝</span></div>
+          <div className="logo-emblem"><img src="/image.png" alt="PMGI Logo" className="logo-img" /></div>
           <div className="logo-text">
             <span className="logo-abbr">PMGI</span>
             <span className="logo-sub">School of Ministry</span>
