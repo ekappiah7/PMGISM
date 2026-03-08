@@ -25,14 +25,7 @@ export default function About() {
           <div ref={leftRef} className="about-visual reveal">
             <div className="about-img-frame">
               <div className="about-img-inner">
-                <div className="about-icon-display">
-                  <div className="cross-display">✝</div>
-                  <p className="about-icon-verse">
-                    "For God hath not given us the spirit of fear; but of power,
-                    and of love, and of a sound mind."
-                  </p>
-                  <p className="about-icon-ref">— 2 Timothy 1:7</p>
-                </div>
+                <img src="/about.jpg" alt="Seminary students studying theology together" className="about-photo" />
               </div>
             </div>
             <div className="about-accent-card">

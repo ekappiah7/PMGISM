@@ -127,11 +127,11 @@ img { max-width: 100%; display: block; }
   position: relative; min-height: 100vh;
   display: flex; align-items: center; justify-content: center;
   overflow: hidden;
-  background: linear-gradient(135deg, #0D0120 0%, #1A0533 40%, #2D0B55 70%, #1A0533 100%);
+  background: url('/hero-bg.jpg') center/cover no-repeat;
 }
 .hero-particles { position: absolute; inset: 0; pointer-events: none; }
 .particle { position: absolute; background: var(--gold); border-radius: 50%; opacity: 0; animation: float-particle linear infinite; }
-.hero-overlay { position: absolute; inset: 0; background: radial-gradient(ellipse 60% 60% at 50% 50%, rgba(45,11,85,0.3) 0%, transparent 70%); }
+.hero-overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(13,1,32,0.88) 0%, rgba(26,5,51,0.80) 40%, rgba(45,11,85,0.72) 70%, rgba(13,1,32,0.88) 100%); }
 
 .hero-content { position: relative; z-index: 2; text-align: center; padding: 100px 24px 60px; max-width: 900px; margin: 0 auto; }
 .hero-badge { display: inline-block; background: rgba(201,168,76,0.15); border: 1px solid rgba(201,168,76,0.4); color: var(--gold-light); font-size: 0.78rem; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; padding: 8px 20px; border-radius: 50px; margin-bottom: 32px; }
@@ -163,10 +163,9 @@ img { max-width: 100%; display: block; }
 .about { padding: 100px 0; background: var(--off-white); }
 .about-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 60px; align-items: start; }
 .about-visual { position: relative; }
-.about-img-frame { border-radius: 20px; overflow: hidden; box-shadow: var(--shadow-lg); aspect-ratio: 3/4; background: linear-gradient(135deg, var(--purple), var(--purple-soft)); border: 1px solid var(--border); }
-.about-img-inner { height: 100%; display: flex; align-items: center; justify-content: center; padding: 40px; }
-.about-icon-display { text-align: center; }
-.cross-display { font-size: 6rem; color: var(--gold); line-height: 1; margin-bottom: 24px; animation: glow-pulse 3s ease infinite; }
+.about-img-frame { border-radius: 20px; overflow: hidden; box-shadow: var(--shadow-lg); aspect-ratio: 3/4; border: 1px solid var(--border); }
+.about-img-inner { height: 100%; }
+.about-photo { width: 100%; height: 100%; object-fit: cover; display: block; }
 .about-icon-verse { font-style: italic; color: rgba(255,255,255,0.85); font-size: 0.95rem; line-height: 1.7; margin-bottom: 8px; }
 .about-icon-ref { color: var(--gold); font-size: 0.82rem; font-weight: 600; }
 .about-accent-card { position: absolute; bottom: -20px; right: -20px; background: linear-gradient(135deg, var(--gold), var(--gold-dark)); border-radius: 16px; padding: 20px 24px; box-shadow: var(--shadow); text-align: center; }
@@ -185,7 +184,7 @@ img { max-width: 100%; display: block; }
    DEGREES
    ============================================================ */
 .degrees { position: relative; padding: 100px 0; background: linear-gradient(135deg, var(--purple) 0%, var(--purple-mid) 50%, var(--purple-soft) 100%); overflow: hidden; }
-.degrees-overlay { position: absolute; inset: 0; background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23C9A84C' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/svg%3E"); }
+.degrees-overlay { position: absolute; inset: 0; background: url('/degrees-bg.jpg') center/cover no-repeat; opacity: 0.18; }
 .degrees-grid { position: relative; display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; }
 .degree-card { background: rgba(255,255,255,0.06); border: 1px solid rgba(201,168,76,0.25); border-radius: 20px; padding: 40px 32px; text-align: center; transition: all 0.4s ease; position: relative; overflow: hidden; }
 .degree-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, transparent, var(--gold), transparent); opacity: 0; transition: opacity var(--ease); }
@@ -207,7 +206,8 @@ img { max-width: 100%; display: block; }
 /* ============================================================
    PROGRAMS
    ============================================================ */
-.programs { padding: 100px 0; background: var(--white); }
+.programs { padding: 100px 0; background: var(--white); position: relative; }
+.programs::before { content: ''; position: absolute; inset: 0; background: url('/programs-bg.jpg') center/cover no-repeat; opacity: 0.05; pointer-events: none; }
 .courses-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px,1fr)); gap: 24px; }
 .course-card { background: var(--white); border: 1px solid rgba(201,168,76,0.15); border-radius: 16px; padding: 28px; transition: all 0.35s ease; position: relative; overflow: hidden; }
 .course-card:hover { border-color: var(--gold); transform: translateY(-4px); box-shadow: 0 12px 40px rgba(201,168,76,0.15); }
@@ -224,7 +224,7 @@ img { max-width: 100%; display: block; }
    ============================================================ */
 .leadership { padding: 100px 0; background: var(--off-white); }
 .leadership-banner { display: grid; grid-template-columns: 1fr 1.2fr; gap: 60px; align-items: start; }
-.leadership-quote-wrap { position: relative; background: linear-gradient(135deg, var(--purple), var(--purple-soft)); border-radius: 20px; padding: 48px 40px; border: 1px solid rgba(201,168,76,0.25); }
+.leadership-quote-wrap { position: relative; background: linear-gradient(135deg, rgba(45,11,85,0.88), rgba(74,20,140,0.82)), url('/leadership-bg.jpg') center/cover no-repeat; border-radius: 20px; padding: 48px 40px; border: 1px solid rgba(201,168,76,0.25); }
 .quote-icon { font-size: 6rem; color: var(--gold); opacity: 0.3; font-family: Georgia, serif; line-height: 0.8; margin-bottom: 8px; }
 blockquote { font-size: 1.05rem; color: rgba(255,255,255,0.9); line-height: 1.8; font-style: italic; }
 .leadership-features { display: flex; flex-direction: column; gap: 28px; }
@@ -237,8 +237,8 @@ blockquote { font-size: 1.05rem; color: rgba(255,255,255,0.9); line-height: 1.8;
 /* ============================================================
    CTA BAND
    ============================================================ */
-.cta-band { position: relative; padding: 100px 0; background: linear-gradient(135deg, #0D0120, #1A0533, #2D0B55); text-align: center; overflow: hidden; }
-.cta-overlay { position: absolute; inset: 0; background: radial-gradient(ellipse 80% 80% at 50% 50%, rgba(201,168,76,0.08) 0%, transparent 70%); }
+.cta-band { position: relative; padding: 100px 0; background: url('/cta-bg.jpg') center/cover no-repeat; text-align: center; overflow: hidden; }
+.cta-overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(13,1,32,0.87), rgba(26,5,51,0.82), rgba(45,11,85,0.80)); }
 .cta-content { position: relative; z-index: 2; }
 .cta-content h2 { font-family: var(--font-display); font-size: clamp(2rem, 5vw, 3.5rem); color: var(--white); margin-bottom: 16px; }
 .cta-content p { font-size: 1.1rem; color: rgba(255,255,255,0.75); max-width: 550px; margin: 0 auto 40px; line-height: 1.7; }
